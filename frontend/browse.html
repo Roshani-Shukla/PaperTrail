@@ -1,0 +1,643 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PaperTrail - Browse Papers</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+            Paper<span>Trail</span>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse.html">Browse Papers</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="upload.html">Upload Paper</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <section class="page-header">
+
+        <h1>Browse Research Papers</h1>
+
+        <p>
+            Explore research papers from different technical fields.
+        </p>
+
+    </section>
+
+
+    <!-- ================= CONTENT ================= -->
+
+    <section class="content">
+
+        <!-- SEARCH -->
+
+        <input
+            type="text"
+            id="searchInput"
+            class="search"
+            placeholder="Search by title, author or category..."
+            onkeyup="filterPapers()"
+        >
+
+
+        <!-- FILTERS -->
+
+        <div class="filters">
+
+            <select id="categoryFilter" onchange="filterPapers()">
+
+                <option value="all">All Categories</option>
+
+                <option value="AI & ML">
+                    AI & ML
+                </option>
+
+                <option value="NLP">
+                    NLP
+                </option>
+
+                <option value="Computer Vision">
+                    Computer Vision
+                </option>
+
+                <option value="Data Science">
+                    Data Science
+                </option>
+
+            </select>
+
+
+            <select id="yearFilter" onchange="filterPapers()">
+
+                <option value="all">All Years</option>
+
+                <option value="2020">2020</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+
+            </select>
+
+        </div>
+
+
+        <!-- ================= PAPERS ================= -->
+
+        <div class="papers" id="papers">
+
+
+            <!-- PAPER 1 -->
+
+            <div
+                class="paper"
+                data-category="NLP"
+                data-year="2017"
+                data-search="attention is all you need ashish vaswani noam shazeer niki parmar nlp"
+            >
+
+                <span class="tag">NLP</span>
+
+                <h2>
+                    Attention Is All You Need
+                </h2>
+
+                <p>
+                    <b>Authors:</b><br>
+                    Ashish Vaswani, Noam Shazeer,
+                    Niki Parmar, Jakob Uszkoreit,
+                    Llion Jones, Aidan N. Gomez,
+                    Lukasz Kaiser, Illia Polosukhin
+                </p>
+
+                <p>
+                    <b>Year:</b> 2017
+                </p>
+
+                <div class="paper-actions">
+
+                    <a
+                        href="https://arxiv.org/abs/1706.03762"
+                        target="_blank"
+                        class="view-btn"
+                    >
+                        👁 View Paper
+                    </a>
+
+                    <a
+                        href="https://arxiv.org/pdf/1706.03762"
+                        target="_blank"
+                        class="download-btn"
+                        download
+                    >
+                        ⬇ Download Paper
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAPER 2 -->
+
+            <div
+                class="paper"
+                data-category="AI & ML"
+                data-year="2014"
+                data-search="generative adversarial nets ian goodfellow jean pouget abadie mehdi mirza machine learning"
+            >
+
+                <span class="tag">AI & ML</span>
+
+                <h2>
+                    Generative Adversarial Nets
+                </h2>
+
+                <p>
+                    <b>Authors:</b><br>
+                    Ian J. Goodfellow, Jean Pouget-Abadie,
+                    Mehdi Mirza, Bing Xu, David Warde-Farley,
+                    Sherjil Ozair, Aaron Courville,
+                    Yoshua Bengio
+                </p>
+
+                <p>
+                    <b>Year:</b> 2014
+                </p>
+
+                <div class="paper-actions">
+
+                    <a
+                        href="https://arxiv.org/abs/1406.2661"
+                        target="_blank"
+                        class="view-btn"
+                    >
+                        👁 View Paper
+                    </a>
+
+                    <a
+                        href="https://arxiv.org/pdf/1406.2661"
+                        target="_blank"
+                        class="download-btn"
+                        download
+                    >
+                        ⬇ Download Paper
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAPER 3 -->
+
+            <div
+                class="paper"
+                data-category="Computer Vision"
+                data-year="2015"
+                data-search="deep residual learning image recognition kaiming he xiangyu zhang shaoging ren jian sun"
+            >
+
+                <span class="tag">Computer Vision</span>
+
+                <h2>
+                    Deep Residual Learning for Image Recognition
+                </h2>
+
+                <p>
+                    <b>Authors:</b><br>
+                    Kaiming He, Xiangyu Zhang,
+                    Shaoqing Ren, Jian Sun
+                </p>
+
+                <p>
+                    <b>Year:</b> 2015
+                </p>
+
+                <div class="paper-actions">
+
+                    <a
+                        href="https://arxiv.org/abs/1512.03385"
+                        target="_blank"
+                        class="view-btn"
+                    >
+                        👁 View Paper
+                    </a>
+
+                    <a
+                        href="https://arxiv.org/pdf/1512.03385"
+                        target="_blank"
+                        class="download-btn"
+                        download
+                    >
+                        ⬇ Download Paper
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAPER 4 -->
+
+            <div
+                class="paper"
+                data-category="NLP"
+                data-year="2018"
+                data-search="bert pre training deep bidirectional transformers language understanding jacob devlin ming wei chang kenton lee kristina toutanova"
+            >
+
+                <span class="tag">NLP</span>
+
+                <h2>
+                    BERT: Pre-training of Deep Bidirectional
+                    Transformers for Language Understanding
+                </h2>
+
+                <p>
+                    <b>Authors:</b><br>
+                    Jacob Devlin, Ming-Wei Chang,
+                    Kenton Lee, Kristina Toutanova
+                </p>
+
+                <p>
+                    <b>Year:</b> 2018
+                </p>
+
+                <div class="paper-actions">
+
+                    <a
+                        href="https://arxiv.org/abs/1810.04805"
+                        target="_blank"
+                        class="view-btn"
+                    >
+                        👁 View Paper
+                    </a>
+
+                    <a
+                        href="https://arxiv.org/pdf/1810.04805"
+                        target="_blank"
+                        class="download-btn"
+                        download
+                    >
+                        ⬇ Download Paper
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAPER 5 -->
+
+            <div
+                class="paper"
+                data-category="NLP"
+                data-year="2020"
+                data-search="language models few shot learners tom brown benjamin mann nick ryder gpt"
+            >
+
+                <span class="tag">NLP</span>
+
+                <h2>
+                    Language Models are Few-Shot Learners
+                </h2>
+
+                <p>
+                    <b>Authors:</b><br>
+                    Tom B. Brown, Benjamin Mann,
+                    Nick Ryder, Melanie Subbiah,
+                    Jared Kaplan, Prafulla Dhariwal,
+                    Arvind Neelakantan, Pranav Shyam,
+                    Girish Sastry, Amanda Askell,
+                    Sandhini Agarwal, Ariel Herbert-Voss,
+                    Gretchen Krueger, Tom Henighan,
+                    Rewon Child, Aditya Ramesh,
+                    Dario Amodei
+                </p>
+
+                <p>
+                    <b>Year:</b> 2020
+                </p>
+
+                <div class="paper-actions">
+
+                    <a
+                        href="https://arxiv.org/abs/2005.14165"
+                        target="_blank"
+                        class="view-btn"
+                    >
+                        👁 View Paper
+                    </a>
+
+                    <a
+                        href="https://arxiv.org/pdf/2005.14165"
+                        target="_blank"
+                        class="download-btn"
+                        download
+                    >
+                        ⬇ Download Paper
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAPER 6 -->
+
+            <div
+                class="paper"
+                data-category="Data Science"
+                data-year="2016"
+                data-search="tensorflow large scale machine learning heterogeneous distributed systems abadi agarwal"
+            >
+
+                <span class="tag">Data Science</span>
+
+                <h2>
+                    TensorFlow: Large-Scale Machine Learning
+                    on Heterogeneous Distributed Systems
+                </h2>
+
+                <p>
+                    <b>Authors:</b><br>
+                    Martín Abadi, Ashish Agarwal,
+                    Paul Barham, Eugene Brevdo,
+                    Zhifeng Chen, Greg S. Corrado,
+                    Andy Davis, Jeffrey Dean,
+                    Matthieu Devin, Sanjay Ghemawat,
+                    Ian Goodfellow
+                </p>
+
+                <p>
+                    <b>Year:</b> 2016
+                </p>
+
+                <div class="paper-actions">
+
+                    <a
+                        href="https://arxiv.org/abs/1603.04467"
+                        target="_blank"
+                        class="view-btn"
+                    >
+                        👁 View Paper
+                    </a>
+
+                    <a
+                        href="https://arxiv.org/pdf/1603.04467"
+                        target="_blank"
+                        class="download-btn"
+                        download
+                    >
+                        ⬇ Download Paper
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAPER 7 -->
+
+            <div
+                class="paper"
+                data-category="AI & ML"
+                data-year="2015"
+                data-search="deep learning yann lecun yoshua bengio geoffrey hinton"
+            >
+
+                <span class="tag">AI & ML</span>
+
+                <h2>
+                    Deep Learning
+                </h2>
+
+                <p>
+                    <b>Authors:</b><br>
+                    Yann LeCun, Yoshua Bengio,
+                    Geoffrey Hinton
+                </p>
+
+                <p>
+                    <b>Year:</b> 2015
+                </p>
+
+                <div class="paper-actions">
+
+                    <a
+                        href="https://doi.org/10.1038/nature14539"
+                        target="_blank"
+                        class="view-btn"
+                    >
+                        👁 View Paper
+                    </a>
+
+                    <a
+                        href="https://doi.org/10.1038/nature14539"
+                        target="_blank"
+                        class="download-btn"
+                    >
+                        ⬇ Download Paper
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAPER 8 -->
+
+            <div
+                class="paper"
+                data-category="Computer Vision"
+                data-year="2012"
+                data-search="imagenet classification deep convolutional neural networks alex krizhevsky ilya sutskever geoffrey hinton"
+            >
+
+                <span class="tag">Computer Vision</span>
+
+                <h2>
+                    ImageNet Classification with Deep
+                    Convolutional Neural Networks
+                </h2>
+
+                <p>
+                    <b>Authors:</b><br>
+                    Alex Krizhevsky, Ilya Sutskever,
+                    Geoffrey E. Hinton
+                </p>
+
+                <p>
+                    <b>Year:</b> 2012
+                </p>
+
+                <div class="paper-actions">
+
+                    <a
+                        href="https://doi.org/10.1145/3065386"
+                        target="_blank"
+                        class="view-btn"
+                    >
+                        👁 View Paper
+                    </a>
+
+                    <a
+                        href="https://doi.org/10.1145/3065386"
+                        target="_blank"
+                        class="download-btn"
+                    >
+                        ⬇ Download Paper
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAPER 9 -->
+
+            <div
+                class="paper"
+                data-category="Data Science"
+                data-year="2014"
+                data-search="adam method stochastic optimization diederik kingma jimmy ba"
+            >
+
+                <span class="tag">Data Science</span>
+
+                <h2>
+                    Adam: A Method for Stochastic Optimization
+                </h2>
+
+                <p>
+                    <b>Authors:</b><br>
+                    Diederik P. Kingma, Jimmy Ba
+                </p>
+
+                <p>
+                    <b>Year:</b> 2014
+                </p>
+
+                <div class="paper-actions">
+
+                    <a
+                        href="https://arxiv.org/abs/1412.6980"
+                        target="_blank"
+                        class="view-btn"
+                    >
+                        👁 View Paper
+                    </a>
+
+                    <a
+                        href="https://arxiv.org/pdf/1412.6980"
+                        target="_blank"
+                        class="download-btn"
+                        download
+                    >
+                        ⬇ Download Paper
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAPER 10 -->
+
+            <div
+                class="paper"
+                data-category="NLP"
+                data-year="2013"
+                data-search="efficient estimation word representations vector space tomas mikolov kai chen greg corrado jeffrey dean word2vec"
+            >
+
+                <span class="tag">NLP</span>
+
+                <h2>
+                    Efficient Estimation of Word Representations
+                    in Vector Space
+                </h2>
+
+                <p>
+                    <b>Authors:</b><br>
+                    Tomas Mikolov, Kai Chen,
+                    Greg Corrado, Jeffrey Dean
+                </p>
+
+                <p>
+                    <b>Year:</b> 2013
+                </p>
+
+                <div class="paper-actions">
+
+                    <a
+                        href="https://arxiv.org/abs/1301.3781"
+                        target="_blank"
+                        class="view-btn"
+                    >
+                        👁 View Paper
+                    </a>
+
+                    <a
+                        href="https://arxiv.org/pdf/1301.3781"
+                        target="_blank"
+                        class="download-btn"
+                        download
+                    >
+                        ⬇ Download Paper
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 PaperTrail | Research Paper Repository
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
+
+
