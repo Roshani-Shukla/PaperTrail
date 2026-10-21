@@ -17,7 +17,7 @@ const PORT = 5000;
 const db = mysql.createPool({
     host: "localhost",
     user: "root",
-    password: "Roshani@001",
+    password: "Roshani@003",
     database: "research_repository",
     waitForConnections: true,
     connectionLimit: 10,
