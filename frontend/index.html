@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PaperTrail - Home</title>
-    <meta name="description" content="PaperTrail is a research paper repository for students and learners to explore research papers across technical fields.">
+    <title>PaperTrail - Research Paper Repository</title>
+    <meta name="description" content="PaperTrail is an academic research paper repository for students and researchers to explore, publish, and download research papers.">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,12 +14,12 @@
 <body>
 
     <nav>
-        <div class="logo">
+        <a href="index.html" class="logo">
             Paper<span>Trail</span>
-        </div>
+        </a>
 
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
             <li><a href="browse.html">Browse Papers</a></li>
             <li><a href="upload.html">Upload Paper</a></li>
         </ul>
@@ -33,47 +32,48 @@
             </h1>
 
             <p>
-                A simple research paper repository for students and learners.
+                An accessible academic research paper repository designed for students, researchers, and learners.
             </p>
 
-            <a href="browse.html" class="btn">
-                Browse Research Papers
-            </a>
+            <div class="hero-actions">
+                <a href="browse.html" class="btn">
+                    Browse Research Papers
+                </a>
+                <a href="upload.html" class="btn btn-outline">
+                    Upload Your Paper
+                </a>
+            </div>
         </section>
 
         <section class="intro">
             <h2>About PaperTrail</h2>
 
             <p>
-                PaperTrail is a research paper repository designed to help
-                students easily find and explore research papers from different
-                areas such as Artificial Intelligence, Machine Learning,
-                Computer Vision, Natural Language Processing and Data Science.
+                PaperTrail is an open research paper repository designed to help students and researchers easily discover, explore, and download scholarly papers across diverse disciplines including Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, and Data Science.
             </p>
         </section>
 
         <section class="features">
-            <div class="card">
+            <a href="browse.html" class="card feature-card-link">
                 <h3>Research Papers</h3>
                 <p>
-                    Explore research papers from different technical fields.
+                    Explore verified research papers from foundational publications to cutting-edge advancements.
                 </p>
-            </div>
+            </a>
 
-            <div class="card">
-                <h3>Easy Search</h3>
+            <a href="browse.html" class="card feature-card-link">
+                <h3>Easy Search & Filters</h3>
                 <p>
-                    Search papers using title, author or research category.
+                    Instantly filter papers by title, author names, publication year, research field, or keywords.
                 </p>
-            </div>
+            </a>
 
-            <div class="card">
-                <h3>Download Papers</h3>
+            <a href="upload.html" class="card feature-card-link">
+                <h3>Upload & Download</h3>
                 <p>
-                    View and download research papers for your study and
-                    reference.
+                    Upload your own academic manuscripts or download existing PDF papers directly to your device.
                 </p>
-            </div>
+            </a>
         </section>
     </main>
 

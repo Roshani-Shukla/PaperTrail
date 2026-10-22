@@ -382,14 +382,19 @@ SELECT
     p.abstract,
     p.publication_year,
     c.category_name,
-    p.doi,
     p.paper_url,
     p.download_url,
     GROUP_CONCAT(
         a.author_name
         ORDER BY pa.author_order
         SEPARATOR ', '
-    ) AS authors
+    ) AS authors,
+    (
+        SELECT GROUP_CONCAT(k.keyword_name ORDER BY k.keyword_name SEPARATOR ', ')
+        FROM paper_keywords pk
+        JOIN keywords k ON pk.keyword_id = k.keyword_id
+        WHERE pk.paper_id = p.paper_id
+    ) AS keywords
 FROM papers p
 LEFT JOIN categories c
     ON p.category_id = c.category_id
@@ -403,6 +408,5 @@ GROUP BY
     p.abstract,
     p.publication_year,
     c.category_name,
-    p.doi,
     p.paper_url,
     p.download_url;

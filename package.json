@@ -1,5 +1,18 @@
 {
+  "name": "papertrail",
+  "version": "1.0.0",
+  "description": "PaperTrail — Research Paper Repository",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
+    "server": "node backend/server.js"
+  },
   "dependencies": {
-    "dotenv": "^18.0.8"
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "multer": "^2.4.0",
+    "mysql2": "^3.14.4"
   }
 }

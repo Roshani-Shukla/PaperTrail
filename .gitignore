@@ -1,2 +1,24 @@
+# Dependencies
 node_modules/
+*/node_modules/
+
+# Environment Variables & Secrets
 .env
+.env.*
+!.env.example
+*.env
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# Uploaded Files (preserve directory with .gitkeep)
+backend/uploads/*.pdf
+!backend/uploads/.gitkeep
+
+# System & Editor files
+.DS_Store
+Thumbs.db
+*.log
+.env
+backend/.env
+backend/ca.pem
