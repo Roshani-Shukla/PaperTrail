@@ -25,7 +25,7 @@ const db = mysql.createPool({
     connectionLimit: 10,
     queueLimit: 0,
     ssl: {
-    ca: fs.readFileSync("./ca.pem"),
+    fs.readFileSync(path.join(__dirname, "ca.pem"))
     rejectUnauthorized: true
 }
 });
