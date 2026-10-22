@@ -1,10 +1,10 @@
-
+const fs = require("fs");
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql2/promise");
 const multer = require("multer");
 const path = require("path");
-const fs = require("fs");
 
 const app = express();
 
@@ -14,14 +14,28 @@ const PORT = 5000;
 // MYSQL CONNECTION
 // ==========================================
 
+
 const db = mysql.createPool({
-    host: "localhost",
-    user: "root",
-    password: "Roshani@003",
-    database: "research_repository",
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT || 19710),
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME || "research_repository",
     waitForConnections: true,
     connectionLimit: 10,
-    queueLimit: 0
+    queueLimit: 0,
+    ssl: {
+    ca: fs.readFileSync("./ca.pem"),
+    rejectUnauthorized: true
+}
+});
+db.getConnection((err, connection) => {
+    if (err) {
+        console.error("Database connection failed:", err.message);
+    } else {
+        console.log("Connected to Aiven MySQL successfully!");
+        connection.release();
+    }
 });
 
 // ==========================================
@@ -36,10 +50,13 @@ app.use(express.urlencoded({ extended: true }));
 // UPLOAD FOLDER
 // ==========================================
 
-const uploadFolder = path.join(__dirname, "uploads");
+
+const uploadFolder = process.env.VERCEL
+    ? path.join("/tmp", "papertrail-uploads")
+    : path.join(__dirname, "uploads");
 
 if (!fs.existsSync(uploadFolder)) {
-    fs.mkdirSync(uploadFolder);
+    fs.mkdirSync(uploadFolder, { recursive: true });
 }
 
 app.use("/uploads", express.static(uploadFolder));
